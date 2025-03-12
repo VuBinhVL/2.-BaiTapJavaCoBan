@@ -4,7 +4,7 @@ class Point2D
 {
     private float x,y;
     //Phương thức khởi tạo
-    Point2D()
+    public Point2D()
     {
         x = 0;
         y = 0;

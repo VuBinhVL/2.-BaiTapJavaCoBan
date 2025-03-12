@@ -5,7 +5,7 @@ class Time
     private int h,m,s;
 
     //Pthuc khởi tạo
-    Time()
+    public Time()
     {
         this.h = 0;
         this.m = 0;
@@ -38,33 +38,60 @@ class Time
 
     public void Input(Scanner sc)
     {
-        int temp;
         System.out.print("Nhập giờ: ");
-        while(!sc.hasNextInt() || (temp = sc.nextInt()) > 23 || temp < 0)
+        while (true)
         {
-            System.out.println("Lỗi vui lòng nhập lại giờ từ 0 đến 23");
-            sc.nextLine();
+            while(!sc.hasNextInt())
+            {
+                System.out.println("Lỗi vui lòng nhập lại giờ!");
+                sc.next();
+                System.out.print("Nhập giờ: ");
+            }
+            this.h = sc.nextInt();
+            if (this.h < 24 && this.h >=0)
+            {
+                break;
+            }
+            System.out.println("Lỗi giờ phải nằm trong khoảng từ 0 đến 23!");
             System.out.print("Nhập giờ: ");
         }
-        this.h = temp;
+
 
         System.out.print("Nhập phút: ");
-        while(!sc.hasNextInt() || (temp = sc.nextInt()) > 59 || temp < 0)
+        while (true)
         {
-            System.out.println("Lỗi vui lòng nhập lại phút từ 0 đến 59");
-            sc.nextLine();
+            while(!sc.hasNextInt())
+            {
+                System.out.println("Lỗi vui lòng nhập lại phút!");
+                sc.next();
+                System.out.print("Nhập phút: ");
+            }
+            this.m = sc.nextInt();
+            if (this.m < 60 && this.m >=0)
+            {
+                break;
+            }
+            System.out.println("Lỗi phút phải nằm trong khoảng từ 0 đến 59!");
             System.out.print("Nhập phút: ");
         }
-        this.m = temp;
 
         System.out.print("Nhập giây: ");
-        while(!sc.hasNextInt() || (temp = sc.nextInt()) > 59 || temp < 0)
+        while (true)
         {
-            System.out.println("Lỗi vui lòng nhập lại giây từ 0 đến 59");
-            sc.nextLine();
+            while(!sc.hasNextInt())
+            {
+                System.out.println("Lỗi vui lòng nhập lại giây!");
+                sc.next();
+                System.out.print("Nhập giây: ");
+            }
+            this.s = sc.nextInt();
+            if (this.s < 60 && this.s >=0)
+            {
+                break;
+            }
+            System.out.println("Lỗi giây phải nằm trong khoảng từ 0 đến 59!");
             System.out.print("Nhập giây: ");
         }
-        this.s = temp;
 
     }
 
