@@ -44,8 +44,22 @@ class Point2D
     public void Input (Scanner s)
     {
         System.out.print("Nhập tọa độ x: ");
+        //Kiểm tra lỗi nhập
+        while (!s.hasNextFloat())
+        {
+            System.out.println("Lỗi vui lòng nhập lại tọa độ x.");
+            s.next();
+            System.out.print("Nhập tọa độ x: ");
+        }
         this.x = s.nextFloat();
+
         System.out.print("Nhập tọa độ y: ");
+        while (!s.hasNextFloat())
+        {
+            System.out.println("Lỗi vui lòng nhập lại tọa độ y.");
+            s.next();
+            System.out.print("Nhập tọa độ y: ");
+        }
         this.y = s.nextFloat();
     }
 
@@ -71,8 +85,21 @@ public class Bai1 {
 
         System.out.println("Nhập tọa độ vector");
         System.out.print("Nhập tọa độ x: ");
+        while (!s.hasNextFloat())
+        {
+            System.out.println("Lỗi vui lòng nhập lại tọa độ x.");
+            s.next();
+            System.out.print("Nhập tọa độ x: ");
+        }
         x = s.nextFloat();
+
         System.out.print("Nhập tọa độ y: ");
+        while (!s.hasNextFloat())
+        {
+            System.out.println("Lỗi vui lòng nhập lại tọa độ y.");
+            s.next();
+            System.out.print("Nhập tọa độ y: ");
+        }
         y = s.nextFloat();
 
         //Xuất
