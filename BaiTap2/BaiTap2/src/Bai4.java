@@ -55,6 +55,7 @@ class LopHoc
         this.thu = thu;
         this.ngayBatDau = ngayBatDau;
         this.ngayKetThuc = ngayKetThuc;
+
     }
 
     public String getTenMon() {
