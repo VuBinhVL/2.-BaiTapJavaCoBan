@@ -1,0 +1,5 @@
+123456,Nguyen Van A,3.8
+234567,Tran Thi B,3.9
+345678,Le Van C,2.5
+456789,Pham Thi D,3.7
+567890,Hoang Van E,4.0
