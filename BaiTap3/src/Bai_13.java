@@ -4,7 +4,7 @@ public class Bai_13 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Nhập N: ");
-        int N = scanner.nextInt();
+        int n = scanner.nextInt();
         scanner.close();
 
         // Bắt đầu đo thời gian
@@ -12,7 +12,7 @@ public class Bai_13 {
 
         // Tính tổng các số từ 1 đến N
         long sum = 0;
-        for (int i = 1; i <= N; i++) {
+        for (int i = 1; i <= n; i++) {
             sum += i;
         }
 
@@ -23,7 +23,7 @@ public class Bai_13 {
         long executionTime = endTime - startTime;
 
         // Hiển thị kết quả
-        System.out.println("Tổng từ 1 đến " + N + " là: " + sum);
+        System.out.println("Tổng từ 1 đến " + n + " là: " + sum);
         System.out.println("Thời gian thực thi: " + executionTime + " nanoseconds.");
     }
 }
