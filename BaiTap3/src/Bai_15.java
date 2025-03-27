@@ -1,31 +1,41 @@
-import java.io.*;
-import java.nio.file.*;
-import java.util.stream.*;
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Student {
+    String name;
+    int score;
+
+    public Student(String name, int score) {
+        this.name = name;
+        this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return name + " - " + score;
+    }
+}
 
 public class Bai_15 {
     public static void main(String[] args) {
-        String inputFile = "data15.txt";
-        String outputFile = "output15.txt";
+        List<Student> students = Arrays.asList(
+                new Student("Alice", 85),
+                new Student("Bob", 45),
+                new Student("Charlie", 60),
+                new Student("David", 30),
+                new Student("Eve", 90),
+                new Student("Frank", 70)
+        );
 
-        try (Stream<String> lines = Files.lines(Paths.get(inputFile));
-             BufferedWriter writer = Files.newBufferedWriter(Paths.get(outputFile))) {
+        // Xử lý danh sách sinh viên
+        String result = students.stream()
+                .filter(s -> s.score >= 50) // 1. Lọc sinh viên có điểm dưới 50
+                .sorted((s1, s2) -> Integer.compare(s2.score, s1.score)) // 2. Sắp xếp giảm dần theo điểm
+                .map(s -> new Student(s.name.toUpperCase(), s.score)) // 3. Chuyển tên thành in hoa
+                .map(Student::toString) // 4. Chuyển danh sách về dạng chuỗi
+                .collect(Collectors.joining(", ", "[", "]")); // 5. Định dạng danh sách
 
-            // Xử lý dữ liệu bằng Lambda
-            lines.filter(line -> !line.trim().isEmpty()) // Loại bỏ dòng trống
-                    .map(String::toUpperCase) // huyển sang chữ in hoa
-                    .forEach(line -> {
-                        try {
-                            writer.write(line);
-                            writer.newLine(); // Xuống dòng sau mỗi dòng
-                        } catch (IOException e) {
-                            System.out.println("Lỗi: " + e.getMessage());
-                        }
-                    });
-
-            System.out.println("Dữ liệu đã được xử lý và ghi vào 'output15.txt'.");
-
-        } catch (IOException e) {
-            System.out.println("Lỗi khi xử lý tệp: " + e.getMessage());
-        }
+        // Xuất kết quả ra màn hình
+        System.out.println(result);
     }
 }
