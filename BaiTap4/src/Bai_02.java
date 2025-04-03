@@ -1,6 +1,6 @@
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+
 
 public class Bai_02 {
     public static void main(String[] args) {
