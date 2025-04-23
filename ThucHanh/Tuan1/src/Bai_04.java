@@ -58,9 +58,9 @@ class SoPhuc
     @Override
     public String toString() {
         if (ao > 0)
-            return String.format("%,.2f + %,.2f*i", thuc, ao);
+            return String.format("%,.2f + %.2f*i", thuc, ao);
         else
-            return String.format("%,.2f - %,.2f*i", thuc, -ao);
+            return String.format("%,.2f - %.2f*i", thuc, -ao);
 
     }
 }
