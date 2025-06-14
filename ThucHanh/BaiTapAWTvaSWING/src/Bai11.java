@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Bai11 extends JFrame {
     public Bai11() {
-        setTitle("Vòng tròn 20 ngôi sao");
+        setTitle("Bài 11");
         setSize(600, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
