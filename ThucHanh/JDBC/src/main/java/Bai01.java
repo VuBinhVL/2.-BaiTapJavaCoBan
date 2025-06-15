@@ -23,12 +23,10 @@ public class Bai01 extends JFrame {
 
     // Kết nối CSDL và tải dữ liệu
     private void loadData() {
-        String url = "jdbc:sqlserver://localhost:1433;instanceName=SQLEXPRESS;databaseName=QLSV;encrypt=true;trustServerCertificate=true;";
-        String user = "sa";
-        String password = "123456789";
+
         try {
             // Bước 1: Kết nối CSDL
-            Connection conn = DriverManager.getConnection(url, user, password);
+            Connection conn = DatabaseConnect.getConnection();
 
             // Bước 2: Thực thi truy vấn
             Statement stmt = conn.createStatement();
